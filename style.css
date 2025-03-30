@@ -45,14 +45,15 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
+    left: 1;
 }
 
 /* Elementi a destra */
-nav li.right {
+nav ul li.right {
     right: 1;
 }
 
-nav li.right a {
+nav ul li.right a {
     color: white;
     text-decoration: none;
 }
