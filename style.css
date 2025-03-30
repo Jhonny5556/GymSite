@@ -6,6 +6,7 @@
 }
 
 html, body {
+    line-height: 1.6;
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }
@@ -47,11 +48,11 @@ nav ul {
 }
 
 /* Elementi a destra */
-nav .nav-right {
-    margin-left: auto;
+nav li.right {
+    right: 1;
 }
 
-nav .nav-right a {
+nav li.right a {
     color: white;
     text-decoration: none;
 }
@@ -97,18 +98,18 @@ nav ul li a {
 }
 
 /* Form nella Navbar */
-nav form {
+nav ul li > form {
     display: flex;
     align-items: center;
 }
 
-nav form input {
+nav ul li > form input {
     padding: 5px;
     border: none;
     border-radius: 5px;
 }
 
-nav button {
+nav ul li > form button {
     padding: 5px 10px;
     border: none;
     background-color: #007bff;
@@ -179,4 +180,23 @@ footer {
     color: white;
     padding: 20px 10px;
     z-index: 1000;
+}
+
+/* Paragrafi e Testo */
+p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 1em;
+}
+
+/* Link */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
 }
