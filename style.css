@@ -37,7 +37,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /*padding: 10px 20px;*/
+    padding: 10px 20px;
 }
 
 /* Lista menu */
@@ -45,20 +45,9 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    left: 1;
+    flex-grow: 1;
 }
 
-/* Elementi a destra */
-nav ul li.right {
-    right: 1;
-}
-
-nav ul li.right a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Link */
 nav ul li {
     margin: 0 10px;
     position: relative;
@@ -70,6 +59,19 @@ nav ul li a {
     padding: 8px 12px;
     display: block;
 }
+
+/* Elementi a destra */
+nav ul li.right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li.right a {
+    color: white;
+    text-decoration: none;
+}
+
 /* Dropdown */
 .dropdown ul {
     display: none;
