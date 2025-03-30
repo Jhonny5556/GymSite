@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html, body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url("img/pr.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header */
+header {
+    background-color: rgba(50, 50, 50, 0.85);
+    padding: 40px 50px;
+    color: white;
+}
+
+/* Navbar */
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* Lista menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Elementi a destra */
+nav .nav-right {
+    margin-left: auto;
+}
+
+nav .nav-right a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Link */
+nav ul li {
+    margin: 0 10px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+}
+/* Dropdown */
+.dropdown ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown:hover ul {
+    display: block;
+}
+
+.dropdown ul li {
+    width: 100%;
+}
+
+.dropdown ul a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Form nella Navbar */
+nav form {
+    display: flex;
+    align-items: center;
+}
+
+nav form input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+nav button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Section */
+section {
+    background-color: rgba(150, 150, 150, 0.75);
+    margin: 50px 20px;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Quando lo schermo è più stretto, gli elementi si dispongono uno sotto l'altro */
+    }
+}
+
+/* Footer */
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 10px;
+    z-index: 1000;
+}
