@@ -25,6 +25,11 @@ header {
     color: white;
 }
 
+header>nav {
+    margin-left: -50px;
+    margin-bottom: -40px;
+}
+
 /* Navbar */
 nav {
     position: sticky;
@@ -156,7 +161,7 @@ nav ul li > form button {
 }
 
 /* Section */
-section {
+section, main{
     background-color: rgba(150, 150, 150, 0.75);
     margin: 50px 20px;
     padding: 20px 40px;
@@ -205,19 +210,27 @@ a:hover {
 }
 
 /* Contenitore del carosello */
+.carousel {
+    position: relative;
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
 ul.product-list {
+    list-style: none;
     display: flex;
+    gap: 20px; /* Distanza tra i prodotti */
     overflow: hidden;
     scroll-behavior: smooth;
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
+    padding: 10px;
+    transition: transform 0.5s ease-in-out;
 }
 
 /* Elementi del carosello */
 li.product-item {
-    min-width: 100%;
+    flex: 0 0 70%; /* Occupa il 70% dello schermo */
     box-sizing: border-box;
     padding: 20px;
     background: white;
@@ -247,14 +260,15 @@ li.product-item {
     cursor: pointer;
     font-size: 18px;
     border-radius: 50%;
+    z-index: 10;
 }
 
 .carousel .prev {
-    left: -40px;
+    left: 10px;
 }
 
 .carousel .next {
-    right: -40px;
+    right: 10px;
 }
 
 .carousel button:hover {
@@ -263,7 +277,8 @@ li.product-item {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .product-item {
+    li .product-item {
+        flex: 0 0 90%;
         padding: 15px;
     }
     .carousel button {

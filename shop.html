@@ -9,37 +9,38 @@
         <script src="shop.js"></script>
         <script>
             const productList = document.querySelector(".product-list");
-            let currentIndex = 0;
+            const productItem = document.querySelector(".product-item");
+            let scrollAmount = 0;
 
             function scrollCarousel(direction) {
-                const items = document.querySelectorAll(".product-item");
-                const totalItems = items.length;
-                const itemWidth = items[0].offsetWidth;
+                const itemWidth = productItem.offsetWidth + 20; // Larghezza del prodotto + gap
+                const maxScroll = productList.scrollWidth - productList.clientWidth;
 
-                currentIndex += direction;
-                if (currentIndex < 0) {
-                    currentIndex = totalItems - 1;
-                } else if (currentIndex >= totalItems) {
-                    currentIndex = 0;
+                scrollAmount += direction * itemWidth;
+                if (scrollAmount < 0) {
+                    scrollAmount = 0;
+                } else if (scrollAmount > maxScroll) {
+                    scrollAmount = maxScroll;
                 }
 
-                productList.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                productList.scrollTo({ left: scrollAmount, behavior: "smooth" });
             }
+
         </script>
     </head>
     <body>
         <header>
             <h1>Benvenuto nel Negozio</h1>
-        </header>
-        <nav>
-            <!-- Hamburger Menu per mobile -->
-            <div class="hamburger" id="hamburger">&#9776;</div>
-            <ul id="menu">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">Chi Siamo</a></li>
-                <li><a href="#">Negozio</a></li>
-            </ul>
+            <nav>
+                <!-- Hamburger Menu per mobile -->
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul id="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="#">Negozio</a></li>
+                </ul>
             </nav>
+        </header>
         <main>
             <h2>I nostri prodotti</h2>
             <div class="carousel">

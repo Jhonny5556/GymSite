@@ -6,10 +6,11 @@
         <title>Home</title>
         <link rel="stylesheet" href="style.css">
         <script src="menu_responsive.js"></script>
+        <script src="home.js"></script>
         <script>
-            setInterval(function() {
+            /*setInterval(function() {
                 location.reload();  // Ricarica la pagina
-            }, 20000);  // 20000 millisecondi = 20 secondi
+            }, 20000);  // 20000 millisecondi = 20 secondi*/
         </script>
     </head>
     <body>
@@ -35,8 +36,8 @@
                 <li><a href="shop.html">Negozio</a></li>
                 <!-- Form di ricerca -->
                 <li>
-                    <form action="#">
-                        <input type="text" placeholder="Cerca prodotto...">
+                    <form action="shop.html" method="get">
+                        <input type="text" id="ricercaProdotto" placeholder="Cerca prodotto...">
                         <button type="submit">Cerca</button>
                     </form>
                 </li>
