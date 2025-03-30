@@ -203,3 +203,71 @@ a {
 a:hover {
     color: #0056b3;
 }
+
+/* Contenitore del carosello */
+ul.product-list {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Elementi del carosello */
+li.product-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Immagini prodotto */
+.product-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Pulsanti di navigazione */
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.carousel .prev {
+    left: -40px;
+}
+
+.carousel .next {
+    right: -40px;
+}
+
+.carousel button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-item {
+        padding: 15px;
+    }
+    .carousel button {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+}

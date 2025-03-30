@@ -6,6 +6,26 @@
         <title>Negozio</title>
         <link rel="stylesheet" href="style.css">
         <script src="menu_responsive.js"></script>
+        <script src="shop.js"></script>
+        <script>
+            const productList = document.querySelector(".product-list");
+            let currentIndex = 0;
+
+            function scrollCarousel(direction) {
+                const items = document.querySelectorAll(".product-item");
+                const totalItems = items.length;
+                const itemWidth = items[0].offsetWidth;
+
+                currentIndex += direction;
+                if (currentIndex < 0) {
+                    currentIndex = totalItems - 1;
+                } else if (currentIndex >= totalItems) {
+                    currentIndex = 0;
+                }
+
+                productList.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -22,22 +42,26 @@
             </nav>
         <main>
             <h2>I nostri prodotti</h2>
-            <div class="product-list">
-                <div class="product-item">
-                    <h3>Lat Machine</h3>
-                    <p>Attrezzo progettato per allenare muscoli della schiena in particolare il gran dorsale.</p>
-                    <p>Prezzo:$599.99 </p>
-                </div>
-                <div class="product-item">
-                    <h3>Chest Press</h3>
-                    <p>Attrezzo per allenare muscoli dei pettorali, tricipiti e deltoidi anteriori.</p>
-                    <p></p>Prezzo:$499.99</p>
-                </div>
-                <div class="product-item">
-                    <h3>Panca Piana</h3>
-                    <p>Attrezzo per allenare la parte superiore del corpo principalmente pettorale.</p>
-                    <p>Prezzo:$89.99</p>
-                </div>
+            <div class="carousel">
+                <button class="prev" onclick="scrollCarousel(-1)">❮</button>
+                <ul class="product-list">
+                    <li class="product-item">
+                        <h3>Lat Machine</h3>
+                        <p>Attrezzo progettato per allenare muscoli della schiena in particolare il gran dorsale.</p>
+                        <p>Prezzo:$599.99 </p>
+                    </li>
+                    <li class="product-item">
+                        <h3>Chest Press</h3>
+                        <p>Attrezzo per allenare muscoli dei pettorali, tricipiti e deltoidi anteriori.</p>
+                        <p></p>Prezzo:$499.99</p>
+                    </li>
+                    <li class="product-item">
+                        <h3>Panca Piana</h3>
+                        <p>Attrezzo per allenare la parte superiore del corpo principalmente pettorale.</p>
+                        <p>Prezzo:$89.99</p>
+                    </li>
+                </ul>
+                <button class="next" onclick="scrollCarousel(1)">❯</button>
             </div>
         </main>
         <footer>

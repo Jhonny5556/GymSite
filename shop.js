@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Funzione per aggiungere un nuovo prodotto dinamicamente
     function addProduct(name, description, price) {
         const productList = document.querySelector(".product-list");
-        const newProduct = document.createElement("div");
+        const newProduct = document.createElement("li");
         newProduct.classList.add("product-item");
         newProduct.innerHTML = `
             <h3>${name}</h3>
