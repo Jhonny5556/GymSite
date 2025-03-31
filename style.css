@@ -190,6 +190,105 @@ footer {
     z-index: 1000;
 }
 
+/* Contenitore principale del footer */
+.footer-content {
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Stile per i paragrafi dentro .footer-content */
+.footer-content > p {
+    margin: 0;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Primo paragrafo (copyright) */
+.footer-content > p:first-child {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* Secondo paragrafo (all rights reserved) */
+.footer-content > p:last-child {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Lista dei link */
+ul.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+ 
+/* Elementi della lista */
+ul.footer-links li {
+    position: relative;
+}
+
+/* Link */
+ul.footer-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+/* Effetto hover */
+ul.footer-links li a:hover {
+    color: #f0f0f0;
+}
+
+/* Sottolineatura animata */
+ul.footer-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+ul.footer-links li a:hover::after {
+    width: 100%;
+}
+
+/* Separatori tra i link (tranne l'ultimo) */
+ul.footer-links li:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+/* Versione mobile */
+@media (max-width: 768px) {
+    .footer-content {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    ul.footer-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    ul.footer-links li:not(:last-child)::after {
+        right: -0.5rem;
+    }
+}
+
 /* Paragrafi e Testo */
 p {
     font-size: 1.1rem;

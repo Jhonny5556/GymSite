@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>&copy; 2025 Praise the bar</p>
             <p>All rights reserved</p>
         </div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact Us</a>
-        </div>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
     `;
     body.appendChild(footer);
 });
