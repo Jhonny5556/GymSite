@@ -26,6 +26,7 @@ header {
 }
 
 header>nav {
+    margin-right: -50px;
     margin-left: -50px;
     margin-bottom: -40px;
 }
@@ -224,6 +225,7 @@ ul.footer-links {
     display: flex;
     gap: 1.25rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
  
 /* Elementi della lista */
@@ -292,7 +294,6 @@ ul.footer-links li:not(:last-child)::after {
 /* Paragrafi e Testo */
 p {
     font-size: 1.1rem;
-    max-width: 800px;
     margin-bottom: 1em;
 }
 
