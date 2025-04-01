@@ -1,55 +1,83 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
+* { /* Selettore per tutti gli elementi */
+    margin: 0; /* Resetta il margine */
+    padding: 0; /* Resetta il padding */
+    box-sizing: border-box; /* Imposta il box-sizing su border-box per includere padding e bordi nelle dimensioni */
+    user-select: none; /* Disabilita la selezione del testo */
 }
 
 html, body {
-    line-height: 1.6;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Imposta l'altezza della linea per migliorare la leggibilità */
+    min-height: 100vh; /* Imposta l'altezza minima del body per occupare almeno l'intera altezza della finestra */
+    font-family: Arial, sans-serif; /* Imposta il font principale del documento */
+    display: flex; /* Usa flexbox per il layout */
+    flex-direction: column; /* Imposta la direzione degli elementi come colonna (verticale) */
 }
 
 body {
-    background-image: url("img/pr.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Imposta uno sfondo con un gradiente sovrapposto all'immagine */
+        /* Aggiungi un'immagine di sfondo centrata, con un effetto di copertura e senza ripetizione */        
+        url('img/pr.jpg') center/cover no-repeat;
+}
+
+/* Paragrafi e Testo */
+p {
+    font-size: 1.1rem; /* Imposta la dimensione del font a 1.1rem per i paragrafi */
+    margin-bottom: 1em; /* Aggiunge uno spazio inferiore di 1 em tra i paragrafi */
+}
+
+/* Link */
+a {
+    color: #007bff; /* Imposta il colore del link su un blu (#007bff) */
+    text-decoration: none; /* Rimuove la sottolineatura dal link */
+    font-weight: 600; /* Imposta il peso del font su 600 (semi-grassetto) */
+    transition: color 0.3s ease-in-out; /* Aggiunge una transizione per il cambiamento del colore */
+}
+a:hover {
+    color: #0056b3; /* Cambia il colore del link quando l'utente ci passa sopra (hover) */
 }
 
 /* Header */
 header {
-    background-color: rgba(50, 50, 50, 0.85);
-    padding: 40px 50px;
-    color: white;
-}
-
-header>nav {
-    margin-right: -50px;
-    margin-left: -50px;
-    margin-bottom: -40px;
+    background-color: rgba(50, 50, 50, 0.85); /* Imposta il colore di sfondo con una tonalità grigia semi-trasparente */
+    padding: 40px 50px; /* Aggiunge padding interno di 40px in alto e in basso, 50px a destra e a sinistra */
+    color: white; /* Imposta il colore del testo su bianco */
 }
 
 /* Navbar */
 nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: #333;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+    position: sticky; /* Imposta la navbar come sticky, facendola rimanere visibile quando si scorre la pagina */
+    top: 0; /* Fissa la navbar in alto alla pagina */
+    left: 0; /* Imposta la navbar a partire dal lato sinistro */
+    z-index: 1000; /* Aggiunge un valore elevato al livello di sovrapposizione per garantire che la navbar sia sopra gli altri contenuti */
+    background-color: #333; /* Imposta il colore di sfondo */
+    color: white; /* Imposta il colore del testo su bianco */
+    display: flex; /* Usa flexbox per il layout */
+    align-items: center; /* Allinea gli elementi verticalmente al centro */
+    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi in modo che ci sia spazio tra di essi */
+    padding: 10px 20px; /* Aggiunge padding interno alla navbar */
+}
+
+/* Logo all'interno della navbar */
+nav .logo {
+    font-size: 24px; /* Imposta la dimensione del testo del logo */
+    color: white; /* Colore del logo */
+    font-weight: bold; /* Rendilo in grassetto */
+    text-transform: uppercase; /* Imposta il testo in maiuscolo */
+    margin-right: auto; /* Allinea a sinistra nella navbar */
+    padding: 10px 20px; /* Padding per un po' di spazio */
+    cursor: pointer; /* Indica che è cliccabile */
+}
+
+/* Stile per un logo come immagine */
+nav .logo img {
+    max-height: 40px; /* Imposta un'altezza massima per il logo */
+    width: auto; /* Mantieni le proporzioni dell'immagine */
 }
 
 /* Lista menu */
 nav ul {
     list-style: none;
-    display: flex;
+    display: flex; /* Usa flexbox per il layout */
     align-items: center;
     flex-grow: 1;
 }
@@ -63,13 +91,13 @@ nav ul li a {
     color: white;
     text-decoration: none;
     padding: 8px 12px;
-    display: block;
+    display: block; /* Imposta l'elemento come blocco */
 }
 
 /* Elementi a destra */
 nav ul li.right {
     margin-left: auto;
-    display: flex;
+    display: flex; /* Usa flexbox per il layout */
     align-items: center;
 }
 
@@ -93,7 +121,7 @@ nav ul li.right a {
 }
 
 .dropdown:hover ul {
-    display: block;
+    display: block; /* Imposta l'elemento visibile come blocco */
 }
 
 .dropdown ul li {
@@ -101,14 +129,14 @@ nav ul li.right a {
 }
 
 .dropdown ul a {
-    display: block;
+    display: block; /* Imposta l'elemento visibile come blocco */
     padding: 10px;
     text-decoration: none;
 }
 
 /* Form nella Navbar */
 nav ul li > form {
-    display: flex;
+    display: flex; /* Usa flexbox per il layout */
     align-items: center;
 }
 
@@ -136,6 +164,10 @@ nav ul li > form button {
 
 /* Responsive */
 @media (max-width: 768px) {
+    nav .logo {
+        display: none;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -148,7 +180,7 @@ nav ul li > form button {
     }
 
     nav ul.show {
-        display: flex;
+        display: flex; /* Usa flexbox per il layout */
     }
 
     nav ul li {
@@ -156,33 +188,38 @@ nav ul li > form button {
         width: 100%;
     }
 
+    nav ul li > form {
+        display: flex; /* Usa flexbox per il layout */ /* Usa flexbox per il layout */
+        flex-direction: column; /* Imposta l'orientamento degli elementi in colonna */
+        align-items: center; /* Allinea gli elementi al centro orizzontalmente */
+        justify-content: center; /* Allinea gli elementi al centro verticalmente */
+        width: 100%; /* Imposta la larghezza del form a 100% */
+    }
+
+    nav ul li > form input,
+    nav ul li > form button {
+        width: 80%; /* Imposta la larghezza degli input e dei bottoni a 80% del form */
+        margin: 5px 0; /* Aggiungi un po' di spazio tra gli input e il bottone */
+    }
+
     .hamburger {
-        display: block;
+        display: block; /* Imposta l'elemento come blocco */
     }
 }
 
 /* Section */
-section, main{
+section, main {
     background-color: rgba(150, 150, 150, 0.75);
-    margin: 50px 20px;
+    margin: 30px 20px;
     padding: 20px 40px;
     text-align: center;
     border-radius: 10px;
-    flex: 1;
+    flex: 1; /* Riempie lo spazio disponibile */
     min-width: 300px;
-}
-
-@media (max-width: 768px) {
-    body {
-        flex-direction: column; /* Quando lo schermo è più stretto, gli elementi si dispongono uno sotto l'altro */
-    }
 }
 
 /* Footer */
 footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
     width: 100%;
     text-align: center;
     background-color: #333;
@@ -222,7 +259,7 @@ ul.footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    display: flex; /* Usa flexbox per il layout */
     gap: 1.25rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -274,7 +311,7 @@ ul.footer-links li:not(:last-child)::after {
     font-weight: 300;
 }
 
-/* Versione mobile */
+/* Responsive footer */
 @media (max-width: 768px) {
     .footer-content {
         text-align: center;
@@ -291,24 +328,6 @@ ul.footer-links li:not(:last-child)::after {
     }
 }
 
-/* Paragrafi e Testo */
-p {
-    font-size: 1.1rem;
-    margin-bottom: 1em;
-}
-
-/* Link */
-a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
 /* Contenitore del carosello */
 .carousel {
     position: relative;
@@ -320,7 +339,7 @@ a:hover {
 
 ul.product-list {
     list-style: none;
-    display: flex;
+    display: flex; /* Usa flexbox per il layout */
     gap: 20px; /* Distanza tra i prodotti */
     overflow: hidden;
     scroll-behavior: smooth;
@@ -375,7 +394,7 @@ li.product-item {
     background: rgba(0, 0, 0, 0.9);
 }
 
-/* Responsive */
+/* Responsive Carosello */
 @media (max-width: 768px) {
     li .product-item {
         flex: 0 0 90%;
@@ -384,5 +403,54 @@ li.product-item {
     .carousel button {
         padding: 8px 12px;
         font-size: 16px;
+    }
+}
+
+/* Tabella */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Stile dell'intestazione */
+thead {
+    background: #2c3e50;
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternanza colori righe */
+tbody tr:nth-child(even) {
+    background: #f8f9fa; /* Grigio chiaro */
+}
+
+/* Effetto hover sulle righe */
+tbody tr:hover {
+    background: #d1e7fd; /* Azzurro chiaro */
+    transition: 0.3s;
+}
+
+/* Responsive per tabella */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
     }
 }

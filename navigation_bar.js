@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <!-- Logo o titolo a sinistra -->
         <div class="logo">
-            <a href="#">Logo</a>
+            <a href="#">💪</a>
         </div>
         <ul id="menu">
             <li><a href="home.html">Home</a></li>
@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </li>
         </ul>
     `;
-    header.appendChild(navigationbar);
+    header.insertAdjacentElement('afterend', navigationbar);
+    //header.appendChild(navigationbar);
 
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
