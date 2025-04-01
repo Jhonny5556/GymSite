@@ -74,24 +74,25 @@ nav .logo img {
     width: auto; /* Mantieni le proporzioni dell'immagine */
 }
 
-/* Lista menu */
+/* Stili per le liste all'interno della navbar */
 nav ul {
-    list-style: none;
+    list-style: none; /* Rimuove i pallini (punti) dal list-style */
     display: flex; /* Usa flexbox per il layout */
-    align-items: center;
-    flex-grow: 1;
+    align-items: center; /* Allinea gli elementi verticalmente al centro */
+    flex-grow: 1; /* Permette alla lista di espandersi per occupare lo spazio disponibile */
 }
 
+/* Stili per gli elementi delle liste all'interno della navbar */
 nav ul li {
-    margin: 0 10px;
-    position: relative;
+    margin: 0 10px; /* Aggiunge uno spazio orizzontale di 10px tra gli item della lista */
 }
 
+/* Stili per i link all'interno degli item della lista */
 nav ul li a {
     color: white;
     text-decoration: none;
     padding: 8px 12px;
-    display: block; /* Imposta l'elemento come blocco */
+    display: block; /* Imposta l'elemento visibile come blocco */
 }
 
 /* Elementi a destra */
@@ -189,7 +190,7 @@ nav ul li > form button {
     }
 
     nav ul li > form {
-        display: flex; /* Usa flexbox per il layout */ /* Usa flexbox per il layout */
+        display: flex; /* Usa flexbox per il layout */
         flex-direction: column; /* Imposta l'orientamento degli elementi in colonna */
         align-items: center; /* Allinea gli elementi al centro orizzontalmente */
         justify-content: center; /* Allinea gli elementi al centro verticalmente */
@@ -203,7 +204,7 @@ nav ul li > form button {
     }
 
     .hamburger {
-        display: block; /* Imposta l'elemento come blocco */
+        display: block; /* Imposta l'elemento visibile come blocco */
     }
 }
 
