@@ -25,7 +25,7 @@ header {
     color: white;
 }
 
-header>nav {
+header > nav {
     margin-right: -50px;
     margin-left: -50px;
     margin-bottom: -40px;
@@ -162,7 +162,7 @@ nav ul li > form button {
 }
 
 /* Section */
-section, main{
+section, main {
     background-color: rgba(150, 150, 150, 0.75);
     margin: 50px 20px;
     padding: 20px 40px;
