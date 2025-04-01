@@ -11,18 +11,20 @@
         <script>
             const productList = document.querySelector(".product-list");
             const productItem = document.querySelector(".product-item");
+
+            if (!productList || !productItem) {
+                console.error("Elemento non trovato: verifica che .product-list e .product-item siano presenti nel DOM.");
+                return;
+            }
+
             let scrollAmount = 0;
 
             function scrollCarousel(direction) {
-                const itemWidth = productItem.offsetWidth + 20; // Larghezza del prodotto + gap
+                const itemWidth = productItem.offsetWidth + 20;
                 const maxScroll = productList.scrollWidth - productList.clientWidth;
 
                 scrollAmount += direction * itemWidth;
-                if (scrollAmount < 0) {
-                    scrollAmount = 0;
-                } else if (scrollAmount > maxScroll) {
-                    scrollAmount = maxScroll;
-                }
+                scrollAmount = Math.max(0, Math.min(scrollAmount, maxScroll));
 
                 productList.scrollTo({ left: scrollAmount, behavior: "smooth" });
             }
@@ -55,6 +57,7 @@
                     </li>
                 </ul>
                 <button class="next" onclick="scrollCarousel(1)">❯</button>
+                <button id="addaddProductBtn">+</button>
             </div>
         </main>
     </body>
