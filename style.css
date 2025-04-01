@@ -89,22 +89,22 @@ nav ul li {
 
 /* Stili per i link all'interno degli item della lista */
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    display: block; /* Imposta l'elemento visibile come blocco */
+    color: white; /* Imposta il colore del testo del link su bianco */
+    text-decoration: none; /* Rimuove la sottolineatura del link */
+    padding: 8px 12px; /* Aggiunge un po' di padding intorno al link */
+    display: block; /* Imposta il link come un elemento a blocco per migliorare l'interazione con l'utente */
 }
 
-/* Elementi a destra */
+/* Stili per gli item della lista a destra */
 nav ul li.right {
-    margin-left: auto;
-    display: flex; /* Usa flexbox per il layout */
-    align-items: center;
+    margin-left: auto; /* Aggiunge uno spazio a sinistra per spingere gli elementi verso destra */
+    display: flex; /* Usa flexbox per allineare gli elementi */
+    align-items: center; /* Allinea gli elementi verticalmente al centro */
 }
 
+/* Stili per i link dentro gli item a destra */
 nav ul li.right a {
-    color: white;
-    text-decoration: none;
+    color: red; /* Imposta il colore del testo su rosso */
 }
 
 /* Dropdown */
