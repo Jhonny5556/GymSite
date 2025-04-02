@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         newProduct.innerHTML = `
             <h3>${name}</h3>
             <p>${description}</p>
-            <p>Prezzo: $${price}</p>
+            <p class="price">Prezzo: $${price}</p>
         `;
         productList.appendChild(newProduct);
         
