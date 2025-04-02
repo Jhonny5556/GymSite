@@ -107,34 +107,6 @@ nav ul li.right a {
     color: red; /* Imposta il colore del testo su rosso */
 }
 
-/* Dropdown */
-.dropdown ul {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    min-width: 150px;
-    top: 100%;
-    left: 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.dropdown:hover ul {
-    display: block; /* Imposta l'elemento visibile come blocco */
-}
-
-.dropdown ul li {
-    width: 100%;
-}
-
-.dropdown ul a {
-    display: block; /* Imposta l'elemento visibile come blocco */
-    padding: 10px;
-    text-decoration: none;
-}
-
 /* Form nella Navbar */
 nav ul li > form {
     display: flex; /* Usa flexbox per il layout */
@@ -329,84 +301,6 @@ ul.footer-links li:not(:last-child)::after {
     }
 }
 
-/* Contenitore del carosello */
-.carousel {
-    position: relative;
-    width: 70%;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
-}
-
-ul.product-list {
-    list-style: none;
-    display: flex; /* Usa flexbox per il layout */
-    gap: 20px; /* Distanza tra i prodotti */
-    overflow: hidden;
-    scroll-behavior: smooth;
-    padding: 10px;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Elementi del carosello */
-li.product-item {
-    flex: 0 0 70%; /* Occupa il 70% dello schermo */
-    box-sizing: border-box;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Immagini prodotto */
-.product-item img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Pulsanti di navigazione */
-.carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.carousel .prev {
-    left: 10px;
-}
-
-.carousel .next {
-    right: 10px;
-}
-
-.carousel button:hover {
-    background: rgba(0, 0, 0, 0.9);
-}
-
-/* Responsive Carosello */
-@media (max-width: 768px) {
-    li .product-item {
-        flex: 0 0 90%;
-        padding: 15px;
-    }
-    .carousel button {
-        padding: 8px 12px;
-        font-size: 16px;
-    }
-}
-
 /* Tabella */
 table {
     width: 100%;
@@ -453,5 +347,127 @@ tbody tr:hover {
 
     th, td {
         padding: 10px;
+    }
+}
+
+/* Contenitore del carosello */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 30px auto;
+    overflow: hidden; /* Importante per il touch */
+}
+
+ul.product-list {
+    display: flex; /* Usa flexbox per il layout */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.7s ease-in-out;
+    will-change: transform; /* Migliora le performance */
+    touch-action: pan-y; /* Permette solo scroll verticale nativo */
+    user-select: none; /* Previene la selezione del testo durante lo swipe */
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Per iOS */
+    scrollbar-width: none; /* Nasconde scrollbar su Firefox */
+}
+
+/* Elementi del carosello */
+li.product-item {
+    flex: 0 0 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    min-width: 100%; /* Importante per il responsive */
+    min-height: 300px;
+
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
+    isolation: isolate; /* Contiene gli effetti */
+    overflow: hidden; /* Mantiene i bordi puliti */
+    transform-style: preserve-3d; /* Preserva i bordi rotondi durante l'animazione di transizione */
+}
+
+/* Testo prodotto */
+.product-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.product-item p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #2a5bd7;
+    font-size: 1.2em;
+}
+
+/* Immagini prodotto */
+.product-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Pulsanti di navigazione */
+.carousel button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: rgba(200,200,200,0.7);
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel button.prev {
+    left: 0;
+}
+
+.carousel button.next {
+    right: 0;
+}
+
+.carousel:hover button {
+    opacity: 1;
+}
+
+.carousel button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive Carosello */
+@media (max-width: 768px) {
+    li .product-item {
+        flex: 0 0 calc(100% - 20px);
+        padding: 15px;
+    }
+    .carousel button {
+        width: 35px;
+        height: 35px;
+        padding: 8px 12px;
+        font-size: 16px;
     }
 }

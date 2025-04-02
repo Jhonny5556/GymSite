@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
     const body = document.querySelector("body");
     const footer = document.createElement("footer");
     footer.innerHTML = `

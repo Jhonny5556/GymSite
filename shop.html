@@ -7,29 +7,8 @@
         <link rel="stylesheet" href="style.css">
         <script src="navigation_bar.js"></script>
         <script src="footer.js"></script>
-        <script src="shop.js"></script>
-        <script>
-            const productList = document.querySelector(".product-list");
-            const productItem = document.querySelector(".product-item");
-
-            if (!productList || !productItem) {
-                console.error("Elemento non trovato: verifica che .product-list e .product-item siano presenti nel DOM.");
-                return;
-            }
-
-            let scrollAmount = 0;
-
-            function scrollCarousel(direction) {
-                const itemWidth = productItem.offsetWidth + 20;
-                const maxScroll = productList.scrollWidth - productList.clientWidth;
-
-                scrollAmount += direction * itemWidth;
-                scrollAmount = Math.max(0, Math.min(scrollAmount, maxScroll));
-
-                productList.scrollTo({ left: scrollAmount, behavior: "smooth" });
-            }
-
-        </script>
+        <script src="carousel.js"></script>
+        <script src="products.js"></script>
     </head>
     <body>
         <header>
@@ -38,7 +17,6 @@
         <main>
             <h2>I nostri prodotti</h2>
             <div class="carousel">
-                <button class="prev" onclick="scrollCarousel(-1)">❮</button>
                 <ul class="product-list">
                     <li class="product-item">
                         <h3>Lat Machine</h3>
@@ -48,7 +26,7 @@
                     <li class="product-item">
                         <h3>Chest Press</h3>
                         <p>Attrezzo per allenare muscoli dei pettorali, tricipiti e deltoidi anteriori.</p>
-                        <p></p>Prezzo:$499.99</p>
+                        <p>Prezzo:$499.99</p>
                     </li>
                     <li class="product-item">
                         <h3>Panca Piana</h3>
@@ -56,8 +34,11 @@
                         <p>Prezzo:$89.99</p>
                     </li>
                 </ul>
-                <button class="next" onclick="scrollCarousel(1)">❯</button>
-                <button id="addaddProductBtn">+</button>
+                <button class="prev" aria-label="Prodotto precedente">❮</button>
+                <button class="next" aria-label="Prodotto successivo">❯</button>
+            </div>
+            <div>
+                <button id="addProductBtn">+</button>
             </div>
         </main>
     </body>
