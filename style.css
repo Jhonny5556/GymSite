@@ -16,7 +16,7 @@ html, body {
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Imposta uno sfondo con un gradiente sovrapposto all'immagine */
         /* Aggiungi un'immagine di sfondo centrata, con un effetto di copertura e senza ripetizione */        
-        url('img/pr.jpg') center/cover no-repeat;
+        url('img/bg_light.jpg') center/cover no-repeat;
 }
 
 /* Paragrafi e Testo */
@@ -470,4 +470,148 @@ li.product-item {
         padding: 8px 12px;
         font-size: 16px;
     }
+}
+
+/* Sezione Team */
+#team {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+#team h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#team p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+#team ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+.profile-card strong {
+    font-size: 1.4rem;
+    color: #222;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #ff6600;
+}
+
+/* Sezione Contatti */
+#contatti {
+    text-align: center;
+    padding: 50px 20px;
+    background: #222;
+    color: white;
+}
+
+#contatti p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#contatti a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('img/bg_dark.jpg') center/cover no-repeat;
+    color: #e0e0e0;
+}
+
+.dark-mode a {
+    color: #ffcc00;
+}
+
+.dark-mode a:hover {
+    color: #ffaa00;
+}
+
+.dark-mode nav, .dark-mode footer {
+    background-color: #222;
+}
+
+.dark-mode section, .dark-mode main {
+    background-color: rgba(50, 50, 50, 0.85);
+    color: white;
+}
+
+.dark-mode table {
+    background: #333;
+    color: white;
+}
+
+.dark-mode thead {
+    background: #444;
+}
+
+.dark-mode tbody tr:nth-child(even) {
+    background: #555;
+}
+
+
+.toggle-container {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(to right, #87CEEB, #ffffff);
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.5s;
+}
+.toggle-button {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: yellow;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.5s;
+}
+.dark-mode .toggle-container {
+    background: linear-gradient(to right, #0d1b2a, #162447);
+}
+.dark-mode .toggle-button {
+    background-color: white;
+    transform: translateX(30px);
 }

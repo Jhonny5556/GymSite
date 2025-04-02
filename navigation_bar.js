@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button type="submit">Cerca</button>
                 </form>
             </li>
+            <li class="right">
+                <div class="toggle-container">
+                    <div class="toggle-button"></div>
+                </div>
+            </li>
         </ul>
     `;
     header.insertAdjacentElement('afterend', navigationbar);
@@ -30,5 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hamburger.addEventListener("click", () => {
         menu.classList.toggle("show");
+    });
+
+    // Controlla se esiste un valore salvato nel Local Storage
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    // Aggiunge l'evento per il toggle
+    document.querySelector(".toggle-container").addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        // Salva la scelta dell'utente nel Local Storage
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
     });
 });
