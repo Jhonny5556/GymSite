@@ -379,13 +379,14 @@ ul.product-list {
 
 /* Elementi del carosello */
 li.product-item {
+    position: relative; /* Impostiamo la posizione relativa per il contenitore */
     flex: 0 0 100%;
     padding: 20px;
     box-sizing: border-box;
     background: white;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
     min-width: 100%; /* Importante per il responsive */
     min-height: 300px;
 
@@ -397,29 +398,54 @@ li.product-item {
     transform-style: preserve-3d; /* Preserva i bordi rotondi durante l'animazione di transizione */
 }
 
-/* Testo prodotto */
-.product-item h3 {
-    margin-top: 0;
-    color: #333;
+/* Immagine come sfondo */
+li.product-item img {
+    position: absolute; /* Posiziona l'immagine assolutamente */
+    top: 10;
+    left: 0;
+    width: 100%; /* Assicuriamoci che l'immagine copra tutto il contenitore */
+    height: 50%; /* Parte dell'altezza del contenitore */
+    object-fit: contain; /* L'immagine si adatta */
+    z-index: -10; /* Posiziona l'immagine dietro al contenuto */
 }
 
-.product-item p {
-    color: #666;
+/* Testo prodotto */
+.product-text h3, 
+.product-text p {
+    position: relative;
+    top: 40%;
+    color: #fff; /* Colore del testo */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* Ombra al testo per migliorarne la leggibilità */
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.4), rgba(255, 0, 200, 0.4));
+    border-radius: 8px; /* Smussa i bordi */
+    padding: 5px 10px; /* Stringe lo sfondo intorno al testo */
+    display: block;
+    width: auto;
+    max-width: 100%; /* Evita overflow */
+}
+
+.product-text h3 {
+    color: #B91D2D; /* Blu scuro per il titolo */
     margin-bottom: 10px;
+}
+
+.product-text p {
+    color: #333; /* Grigio scuro per il paragrafo */
+    margin-bottom: 5px;
+}
+
+/* Hover Effect */
+li.product-item:hover {
+    transform: scale(0.95); /* Leggero zoom-out sul contenitore */
+    filter: brightness(0.8); /* Aggiunge un effetto scuro all'immagine */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombra per effetto hover */
+    border-radius: 15px;
 }
 
 .price {
     font-weight: bold;
     color: #2a5bd7;
     font-size: 1.2em;
-}
-
-/* Immagini prodotto */
-.product-item img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
 /* Pulsanti di navigazione */
