@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li>
                 <form action="shop.html" method="get">
                     <input type="text" id="ricercaProdotto" placeholder="Cerca prodotto...">
-                    <button type="submit">Cerca</button>
+                    <button type="submit" title="Ricerca del prodotto">Cerca</button>
                 </form>
             </li>
             <li class="right">
