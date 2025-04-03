@@ -14,48 +14,49 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/navigation_bar.js"></script>
         <script src="js/footer.js"></script>
-        <script src="js/carousel.js"></script>
+        
         <script src="js/products.js"></script>
     </head>
     <body>
         <header>
             <h1>Benvenuto nel Negozio</h1>
         </header>
-        <main>
-            <h2>I nostri prodotti</h2>
-            <div class="carousel">
-                <button class="prev" title="Prodotto precedente">❮</button>
-                <button class="next" title="Prodotto successivo">❯</button>
-                <ul class="product-list">
-                    <li class="product-item">
-                        <img src="media/product_latmachine.jpg" alt="immagine di Lat Machine" title="Lat Machine">
-                        <span class="product-text">
-                            <h3>Lat Machine</h3>
-                            <p>Attrezzo progettato per allenare muscoli della schiena in particolare il gran dorsale.</p>
-                            <p class="price">Prezzo: $599.99 </p>
-                        </span>
-                    </li>
-                    <li class="product-item">
-                        <img src="media/product_chestpress.jpg" alt="immagine di Chest Press" title="Chest Press">
-                        <span class="product-text">
-                            <h3>Chest Press</h3>
-                            <p>Attrezzo per allenare muscoli dei pettorali, tricipiti e deltoidi anteriori.</p>
-                            <p class="price">Prezzo: $499.99</p>
-                        </span>
-                    </li>
-                    <li class="product-item">
-                        <img src="media/product_panca.jpg" alt="immagine di Panca Piana" title="Panca Piana">
-                        <span class="product-text">
-                            <h3>Panca Piana</h3>
-                            <p>Attrezzo per allenare la parte superiore del corpo principalmente pettorale.</p>
-                            <p class="price">Prezzo: $89.99</p>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <button id="addProductBtn" title="Aggiungi prodotto" style="display: none;">+</button>
-            </div>
-        </main>
+        <section id="prodotti">
+            <h2>Prodotti di Punta</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prodotto</th>
+                        <th>Descrizione</th>
+                        <th>Prezzo</th>
+                        <th>Sconto</th>
+                        <th>Acquista</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Panca Piana</td>
+                        <td>Panca robusta e stabile, ideale per allenamenti con bilanciere e manubri.</td>
+                        <td>€99.99</td>
+                        <td>-20%</td>
+                        <td><a href="#PancaPiana">Aggiungi al carrello</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lat Machine</td>
+                        <td>Macchina per trazioni dorsali, ideale per allenare la schiena e le spalle.</td>
+                        <td>€499.99</td>
+                        <td>-15%</td>
+                        <td><a href="#LatMachine">Aggiungi al carrello</a></td>
+                    </tr>
+                    <tr>
+                        <td>Chest Press</td>
+                        <td>Macchina per pettorali, perfetta per sviluppare forza e massa muscolare nel petto.</td>
+                        <td>€29.99</td>
+                        <td>-10%</td>
+                        <td><a href="#ChestPress">Aggiungi al carrello</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </body>
 </html>
