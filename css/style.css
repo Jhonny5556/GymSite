@@ -426,6 +426,7 @@ li.product-item img {
 
 .product-text h3 {
     color: #B91D2D; /* Blu scuro per il titolo */
+    padding: 20px;
     margin-bottom: 10px;
 }
 
