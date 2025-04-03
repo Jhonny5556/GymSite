@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let productWidth = products[0].offsetWidth;
     let maxIndex = products.length - 1;
     let autoScrollTimer;
-    let autoScrollInterval = null; // ✅ Dichiarato correttamente
+    let autoScrollInterval = null; // Dichiarato correttamente
     const scrollInterval = 5000; // 5 secondi
 
     function updateDimensions() {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startAutoScroll() {
-        stopAutoScroll(); // ✅ Evita di avviare più intervalli contemporaneamente
+        stopAutoScroll(); // Evita di avviare più intervalli contemporaneamente
         autoScrollInterval = setInterval(moveToNext, scrollInterval);
     }
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function resetAutoScroll() {
-        if (autoScrollInterval) { // ✅ Controlla se esiste prima di cancellarlo
+        if (autoScrollInterval) { // Controlla se esiste prima di cancellarlo
             clearInterval(autoScrollInterval);
         }
         autoScrollInterval = setInterval(moveToNext, 5000);

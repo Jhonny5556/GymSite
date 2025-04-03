@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     products.forEach(product => {
         product.addEventListener("click", function () {
             const productName = this.querySelector("h3").innerText;
-            alert(`Hai selezionato: ${productName}`);
+            //alert(`Hai selezionato: ${productName}`);
+            window.location.href = "./shop.html";
         });
     });
 
@@ -24,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Aggiungi evento di click al nuovo prodotto
         newProduct.addEventListener("click", function () {
-            alert(`Hai selezionato: ${name}`);
+            //alert(`Hai selezionato: ${name}`);
+            window.location.href = "./shop.html";
         });
     }
 
