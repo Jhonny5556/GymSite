@@ -13,15 +13,72 @@
     <title>Contattaci</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/navigation_bar.js"></script>
-    <script src="js/carousel.js"></script>
     <script src="js/footer.js"></script>
+    <script>
+        function printValues() {
+            event.preventDefault();
+
+            const formValori = document.getElementById("form1");
+            const elementi = formValori.getElementsByTagName("input");
+            const etichette = formValori.getElementsByTagName("label");
+            const textArea = formValori.getElementsByTagName("textarea");
+
+            const elenco = document.getElementById("elenco");
+            elenco.style.display = "block";
+            elenco.innerHTML = "";
+
+            if (elementi != null) {
+                for (let i = 0; i < elementi.length; i++) {
+                    let tipo = elementi[i].type;
+                    if (tipo != "submit" && tipo != "reset") {
+                        if ( 
+                            ((tipo == "radio" || tipo=="checkbox") && elementi[i].checked) 
+                            || (tipo != "radio" && tipo!="checkbox")) {
+                            const valore = elementi[i].value;
+                            const etichetta = etichette[i].textContent;
+                            const elementoLi = document.createElement("li");
+                            const valoreTxt = document.createTextNode(
+                                etichetta + " " + valore);
+
+                            elementoLi.appendChild(valoreTxt);
+                            elenco.appendChild(elementoLi);
+                        }
+                    }
+                }
+            }
+
+            if (textArea != null) {
+                for (let i = 0; i < textArea.length; i++) {
+                    const valore = textArea[i].value;
+                    const id = textArea[i].getAttribute("id");
+
+                    for (let i = 0; i < etichette.length; i++) {
+                        if (etichette[i].getAttribute("for") == id) {
+                            const etichetta = etichette[i].textContent;
+                            //const etichetta = document.getAttribute("")
+                            console.log("etichetta" + etichetta);
+                            const elementoLi = document.createElement("li");
+                            const valoreTxt = document.createTextNode(etichetta + " " + valore);
+
+                            elementoLi.appendChild(valoreTxt);
+                            elenco.appendChild(elementoLi);
+                            break;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    </script>
 </head>
 <body>
     <header>
         <p>Contattaci qui..</p>
     </header>
     <main class="contact">
-        <form action="#">
+        <form action="./" method="post" id="form1" onsubmit="printValues(event);">
             <fieldset>
                 <legend>Informazioni di contatto</legend>
                 <label for="nome">Nome:</label>
@@ -39,10 +96,21 @@
                 <input type="text" name="indirizzo" id="indirizzo">
             </fieldset>
             <fieldset>
-                <input type="reset" value="Cancella form">
+                <legend></legend>
+                <label for="suggest">Suggeriscici un nuovo attrezzo da aggiungere al negozio: </label>
+                <textarea name="suggest" id="suggest" cols="30" rows="5"></textarea><br>
+                <label for="idTxt">Dicci cosa ne pensi del servizio offerto: </label>
+                <textarea id="idTxt" name="message" cols="30" rows="5"></textarea><br>
+            </fieldset>
+            <fieldset>
+                <input type="reset" value="Cancella form" onclick="document.getElementById('elenco').innerHTML='';">
                 <input type="submit" value="Invia dati">
             </fieldset>
         </form>
     </main>
+    <section>
+        <p>Dati ricevuti dal form qui sopra</p>
+        <ul id="elenco"></ul>
+    </section>
 </body>
 </html>

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">Chi Siamo</a></li>
             <li><a href="shop.html">Negozio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
             <!-- Form di ricerca -->
             <li>
                 <form action="shop.html" method="get">
@@ -21,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </form>
             </li>
             <li class="right">
+                <a href="#" title="Carrello">
+                    <img src="img/cart-shopping.svg" alt="Cart Shopping" width="30" height="30">
+                </a>
                 <div class="toggle-container">
                     <div class="toggle-button"></div>
                 </div>

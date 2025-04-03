@@ -38,9 +38,14 @@ a:hover {
 
 /* Header */
 header {
-    background-color: rgba(50, 50, 50, 0.85); /* Imposta il colore di sfondo con una tonalità grigia semi-trasparente */
+    background-color: rgba(65, 65, 65, 0.85); /* Imposta il colore di sfondo con una tonalità grigia semi-trasparente */
     padding: 40px 50px; /* Aggiunge padding interno di 40px in alto e in basso, 50px a destra e a sinistra */
     color: white; /* Imposta il colore del testo su bianco */
+}
+
+/* Header con la modalità scura */
+.dark-mode header {
+    background-color: rgba(50, 50, 50, 0.85); /* Imposta il colore di sfondo con una tonalità grigia semi-trasparente */
 }
 
 /* Navbar */
@@ -49,12 +54,18 @@ nav {
     top: 0; /* Fissa la navbar in alto alla pagina */
     left: 0; /* Imposta la navbar a partire dal lato sinistro */
     z-index: 1000; /* Aggiunge un valore elevato al livello di sovrapposizione per garantire che la navbar sia sopra gli altri contenuti */
-    background-color: #333; /* Imposta il colore di sfondo */
-    color: white; /* Imposta il colore del testo su bianco */
+    background-color: #565656; /* Imposta il colore di sfondo */
+    color: #333; /* Imposta il colore del testo su bianco */
     display: flex; /* Usa flexbox per il layout */
     align-items: center; /* Allinea gli elementi verticalmente al centro */
     justify-content: space-between; /* Distribuisce lo spazio tra gli elementi in modo che ci sia spazio tra di essi */
     padding: 10px 20px; /* Aggiunge padding interno alla navbar */
+}
+
+/* Navbar con stile scuro */
+.dark-mode nav {
+    background-color: #333; /* Imposta il colore di sfondo */
+    color: white; /* Imposta il colore del testo su bianco */
 }
 
 /* Logo all'interno della navbar */
@@ -100,6 +111,7 @@ nav ul li.right {
     margin-left: auto; /* Aggiunge uno spazio a sinistra per spingere gli elementi verso destra */
     display: flex; /* Usa flexbox per allineare gli elementi */
     align-items: center; /* Allinea gli elementi verticalmente al centro */
+    gap: 30px;
 }
 
 /* Stili per i link dentro gli item a destra */
@@ -181,7 +193,7 @@ nav ul li > form button {
     }
 }
 
-/* Section */
+/* Section e Main*/
 section, main {
     background-color: rgba(150, 150, 150, 0.75);
     margin: 30px 20px;
@@ -196,10 +208,15 @@ section, main {
 footer {
     width: 100%;
     text-align: center;
-    background-color: #333;
-    color: white;
+    background-color: #565656;
+    color: #333;
     padding: 20px 10px;
     z-index: 1000;
+}
+
+.dark-mode footer {
+    background-color: #333;
+    color: white;
 }
 
 /* Contenitore principale del footer */
@@ -229,7 +246,8 @@ footer {
 }
 
 /* Lista dei link */
-ul.footer-links {
+ul.footer-links,
+ul.footer-socials {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -240,12 +258,14 @@ ul.footer-links {
 }
  
 /* Elementi della lista */
-ul.footer-links li {
+ul.footer-links li,
+ul.footer-socials li {
     position: relative;
 }
 
 /* Link */
-ul.footer-links li a {
+ul.footer-links li a,
+ul.socials li a {
     text-decoration: none;
     color: #ffffff;
     font-size: 0.875rem;
@@ -283,6 +303,17 @@ ul.footer-links li:not(:last-child)::after {
     right: -0.75rem;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 300;
+}
+
+ul.footer-socials li a img {
+    width: 50px;
+    height: 50px;
+    filter: invert(50%); /* Cambia il colore (opzionale) */
+    transition: transform 0.3s ease-in-out;
+}
+
+ul.footer-socials li a img:hover {
+    transform: scale(1.1); /* Effetto zoom al passaggio del mouse */
 }
 
 /* Responsive footer */
@@ -413,7 +444,7 @@ li.product-item img {
 .product-text h3, 
 .product-text p {
     position: relative;
-    top: 40%;
+    top: 33%;
     color: #fff; /* Colore del testo */
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* Ombra al testo per migliorarne la leggibilità */
     background: linear-gradient(45deg, rgba(0, 255, 255, 0.4), rgba(255, 0, 200, 0.4));
@@ -621,8 +652,12 @@ li.product-item:hover {
     background: #555;
 }
 
-.darkmode tbody tr:hover {
-    background: #343a40; /* Colore di sfondo più scuro per la modalità dark */
+.dark-mode tbody tr:nth-child(even):hover {
+    background: #00182f;
+}
+
+.dark-mode tbody tr:hover {
+    background: #00182f; /* Azzurro chiaro */
     transition: 0.3s;
 }
 
@@ -790,6 +825,7 @@ li.product-item:hover {
 .dark-mode .contact input[type="reset"]:hover {
     background: #c9302c;
 }
+
 .social-media{
     position : absolute;
     top: 10px;
