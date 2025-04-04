@@ -26,13 +26,13 @@ function ordinamento(elemento, colIndex) {
         scambio = false;
         for (let i = 1; i < dimensione - 1; i++) {
             // ottengo riferimento alla cella di una riga in base all'indice
-            const valoreTdA = righe[i].cells[colIndex]
+            const valoreTdA = righe[i].cells[colIndex];
             // ottengo il contenuto testuale di una cella td
-            const valoreA = valoreTdA.innerText.toLowerCase();
+            const valoreA = valoreTdA.innerText.toLowerCase().replace('€', '');
             // ottengo riferimento alla cella di una riga in base all'indice
             const valoreTdB = righe[i + 1].cells[colIndex];
             // ottengo il contenuto testuale di una cella td
-            const valoreB = valoreTdB.innerText.toLowerCase();
+            const valoreB = valoreTdB.innerText.toLowerCase().replace('€', '');
             if (crescente && (valoreA > valoreB) || (!crescente && (valoreA < valoreB))) {
                 const nodoPadre = righe[i].parentNode;
                 nodoPadre.insertBefore(righe[i + 1], righe[i]);
