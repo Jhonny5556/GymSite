@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </form>
             </li>
             <li class="right">
-                <a href="#" title="Carrello">
+                <a href="#" title="Carrello" id="carrello">
                     <img src="img/cart-shopping.svg" alt="Cart Shopping" width="30" height="30">
                 </a>
                 <div class="toggle-container">
