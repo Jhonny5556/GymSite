@@ -827,9 +827,9 @@ li.product-item:hover {
 }
 
 #carrello {
-    filter: invert(0.5);
+    filter: invert(1);
 }
 
 .dark-mode #carrello {
-    filter: invert(1);
+    filter: brightness(0) saturate(100%) invert(95%) sepia(100%) saturate(400%) hue-rotate(10deg);
 }
